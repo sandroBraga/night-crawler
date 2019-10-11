@@ -1,0 +1,30 @@
+{
+  "src_folders" : ["tests"],
+  "webdriver" : {
+    "start_process": true,
+    "server_path": "node_modules/.bin/chromedriver",
+    "port": 9515
+  },
+  "test_settings" : {
+    "default" : {
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "launchUrl": "https://youtube.com",
+        "chromeOptions" : {
+          "args" : ["start-fullscreen"]
+        }
+      }
+    }
+  },
+  "selenium_server" : {
+    "selenium" : {
+      "start_process": true,
+      "host": "localhost",
+      "server_path": "./bin/selenium-server-standalone-3.10.0.jar",
+      "cli_args": {
+        "webdriver.gecko.driver": "./bin/geckodriver-0.23",
+        "webdriver.chrome.driver": "./bin/chromedriver-2.32"
+      }
+    }
+  }
+}
