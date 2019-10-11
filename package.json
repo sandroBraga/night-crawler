@@ -11,5 +11,8 @@
   "dependencies": {
     "chromedriver": "^77.0.0",
     "nightwatch": "^1.2.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
   }
 }
