@@ -1,21 +1,14 @@
-const facebookUser = require('../userPO/FacebookUser');
-const facebookPO   = require('../page_objects/facebookHome');
+const homepagePO   = require('../page_objects/home_page_po');
 
 module.exports = {
-  'Crawler step one' : function (browser) {
+  'Crawler step one': function (browser) {
     browser
-      .url(facebookPO.URL)
+      .url(homepagePO.URL)
       .pause(2000)
-      .setValue(facebookPO.EMAIL_INPUT, facebookUser.EMAIL)
+      .setValue(homepagePO.INPUT, 'Hello world')
       .pause(2000)
-      .setValue(facebookPO.PASS_INPUT, facebookUser.PASSWORD)
-      .pause(2000)
-      .click(facebookPO.LOGIN_BUTTON)
-      .pause(10000)
-      .setValue(facebookPO.SEARCH_INPUT, 'Fernando Reiz')
-      .pause(2000)
-      .keys(browser.Keys.ENTER)
-      .pause(200000)
+      .assert.containsText('[data-nw=welcome-message]', 'Welcome Hello world !')
+      .pause(1000)
       .end();
   }
 };
